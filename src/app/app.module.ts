@@ -7,20 +7,37 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { StoriesComponent } from './stories/stories.component';
 import { FooterComponent } from './footer/footer.component';
+import { ItemComponent } from './item/item.component';
+import { HnApiService } from './hn-api.service';
+
+import { MomentModule } from 'angular2-moment';
+import { DomainPipe } from './domain.pipe';
+import { ItemcommentsComponent } from './itemcomments/itemcomments.component';
+import { routing } from './app.routes';
+import { CommentTreeComponent } from './c-tree/c-tree.component';
+import { CommentComponent } from './comment/comment.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     StoriesComponent,
-    FooterComponent
+    FooterComponent,
+    ItemComponent,
+    DomainPipe,
+    ItemcommentsComponent,
+    CommentTreeComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MomentModule,
+    routing
   ],
-  providers: [],
+  providers: [HnApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
